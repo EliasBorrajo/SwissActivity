@@ -1,0 +1,1 @@
+console.log("activitySearch.js loaded");
