@@ -96,29 +96,36 @@ body {
     background-color: #0062b1;
   }
   
-  /* Style the footer */
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #333;
-    padding: 20px;
-  }
-  
-  footer p {
-    font-size: 14px;
-    margin: 0;
-  }
-  
-  /*Center the footer image horizontally */
-    footer img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin: 0 auto;
-        width: 25%;
-    }
+ /* Style the footer */
+footer {
+  display: flex;
+  flex-direction: column;  /* Change the layout to column */
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 20px;
+}
 
+/* Style the hyperlink in the footer */
+footer a {
+  color: #0072c6;  /* Change the color of the link */
+  text-decoration: none;
+}
+
+footer p {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;  /* Center the link */
+}
+
+/* Center the footer image horizontally */
+footer img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+  width: 25%;
+}
 
     
   
