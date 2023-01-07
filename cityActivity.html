@@ -32,8 +32,52 @@
 
         <main>
             <h1>Activities result for : </h1>
-            <div id="cityName"></div> 
-            <div id="weather-info"></div>           
+            <label for="cityName">Nom du lieu :</label>
+            <div id="cityName"></div>
+            <br>
+            <label for="weather-info">Informations sur la météo :</label>
+            <div id="weather-info"></div>
+            <br>
+            <div><img id="weatherIcon"></img></div> 
+            <h2>Activité(s) proposée(s)</h2>
+            <style>
+                table {
+                  border-collapse: collapse;
+                  width: 100%;
+                }
+                td, th {
+                  border: 1px solid #dddddd;
+                  text-align: left;
+                  padding: 8px;
+                }
+              </style>
+            <table>
+                <tr>
+                  <th>Activité</th>
+                  <th>Lieu</th>
+                  <th>Prix</th>
+                </tr>
+                <tr>
+                  <td>Cours d'escalade</td>
+                  <td>Arbaz</td>
+                  <td>120 CHF</td>
+                </tr>
+                <tr>
+                  <td>Bisse de Savièse</td>
+                  <td>Savièse</td>
+                  <td>Gratuit</td>
+                </tr>
+                <tr>
+                  <td>Via ferrata du Belvédère</td>
+                  <td>Nax</td>
+                  <td>Gratuit</td>
+                </tr>
+                <tr>
+                  <td>Visite du château de Tourbillon et de la basilique de Valère</td>
+                  <td>Sion</td>
+                  <td>Gratuit</td>
+                </tr>
+              </table>                       
         </main>
 
         <footer>
