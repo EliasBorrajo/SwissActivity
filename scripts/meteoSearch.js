@@ -3,7 +3,7 @@ console.log("meteoSearch.js loaded");
 // This function is called when the user clicks the search button
 
 const API_KEY = '6842a7cfc89801efb1369dfdf93e416c';
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${API_KEY}`;
 
 function searchMeteo() {
     console.log("searchMeteo() called");
