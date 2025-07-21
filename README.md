@@ -1,4 +1,4 @@
-# SwissActivity 🇨🇭🎉
+# SwissActivity 🇨🇭
 
 > *Find an outdoor activity anywhere in Switzerland in under a minute.*
 > **Stack :** Vanilla JS + HTML5 + CSS3 · zero build‑step.
@@ -73,10 +73,10 @@ All of that without any framework, transpiler or backend — just plain browser 
 * **Milena Lonfat**
 * **Jonathan Bourquin**
 
-## 8. License
+## 6. License
 
 MIT — see [`LICENSE.md`](LICENSE.md).
 
-## 9. Acknowledgements
+## 7. Acknowledgements
 
 Built at the *“Swiss Open‑Data Sprint”* (Fall 2023) — thanks to the [opendata.swiss](https://opendata.swiss) & [OpenAgenda](https://openagenda.com) communities for their awesome free APIs!
