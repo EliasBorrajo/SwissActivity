@@ -1,82 +1,124 @@
 # SwissActivity 🇨🇭
 
-> *Find an outdoor activity anywhere in Switzerland in under a minute.*
-> **Stack :** Vanilla JS + HTML5 + CSS3 · zero build‑step.
+> **Find an outdoor activity anywhere in Switzerland in under a minute.**
+> 
+> **Stack :** Vanilla JS • HTML5 • CSS3 — zero build‑step
 
 ---
 
-## 1. About the challenge
+## 📚 Project Overview
 
-⏱️ 6**0 minutes, one static site, 2 open-source APIs — that was the deal.**
-During a coding sprint at HES‑SO (module *Web dev basics / Open Data*), our trio built a micro‑web‑app that:
+SwissActivity is a tiny single‑page web app created during a **one‑day open‑data hackathon** at HES‑SO Valais‑Wallis (module *Web Dev Basics / Open Data*, 17 Dec 2022 & 7 Jan 2023).
 
-1. Lets you **search for a Swiss city** (auto‑complete on 2 000+ localities).
-2. Queries two public APIs ↓ and returns **up‑to‑date events & activities** within **30 km** of that location.
-3. Displays the **current weather** in the same view so you know if you’ll need sunscreen or a raincoat.
+**Challenges addressed**
 
-All of that without any framework, transpiler or backend — just plain browser tech.
+* Visitors (or locals) struggle to discover nearby cultural or outdoor events, especially in mountain cantons such as Valais.
+* Existing portals don’t combine **live weather** with **event listings**.
+* Many public APIs are fragmented or temporarily offline.
 
-| Data source         |  Notes                                    |
-| ------------------- |  ---------------------------------------- |
-| **openagenda.com**  |  Free cultural‑event API (all CH cantons) |
-| **OpenWeather Map** |  Current conditions, icons & temp         |
+**Solution in 60 minutes**
 
-*(Both services offer **************************free API keys**************************; plug yours in ************************`scripts/config.js`************************.)*
+1. Lets you **search for a Swiss city** (auto‑complete on 2 152 localities).
+2. Pulls **up‑to‑date events & activities** within **30 km** of that location.
+   *Current prototype uses a small ********************************************fictitious dataset******************************************** because the intended MySwitzerland Open Data API was unavailable during the sprint.*
+3. Shows the **current weather** so you know whether to pack sunscreen or a raincoat.
+
+All logic runs client‑side — no build tools, servers or frameworks.
 
 ---
 
-## 2. Features
+## 🧪 Technologies Used
 
-* 🔍 **City search** with debounced input & keyboard navigation.
+| Layer / Purpose | Tool / Library              | Notes                                                                   |
+| --------------- | --------------------------- | ----------------------------------------------------------------------- |
+| **Language**    | JavaScript                  | Modules & fetch                                                         |
+| **Markup**      | HTML5                       | Semantic tags                                                           |
+| **Styles**      | CSS3 (+ Flexbox / CSS vars) | Responsive & dark mode                                                  |
+| **APIs**        | OpenWeather Map             | Live weather (requires free key)                                        |
+|                 | *Fictitious Events DB*      | Placeholder until a cultural‑event API (e.g. MySwitzerland) is restored |
+
+
+---
+
+## 🎯 Learning Objectives
+
+* Practice rapid prototyping with raw browser technologies.
+* Consume and aggregate **open‑data APIs** (events + weather).
+* Apply **accessibility** basics (ARIA, contrast, keyboard navigation).
+* Deliver a functional MVP within hackathon time constraints.
+
+---
+
+## 🔧 Features
+
+* 🔍 **Debounced city search** with keyboard navigation.
 * 📅 **Activity list** (title · place · price) sorted by date.
-* ☀️ **Weather widget** (icon + temp + short description).
-* 📱 **Responsive layout**: flexbox navigation bar collapses into a hamburger on < 768 px.
-* ♿ **A11y**: semantic HTML, ARIA labels, proper contrast.
-* 🌓 **Dark‑mode toggle** (CSS custom‑props).
+* ☀️ **Weather widget** (icon, temperature, description).
+* 📱 **Responsive design** → navbar collapses under 768 px.
+* ♿ **A11y** → semantic HTML, skip‑link, proper contrast.
+* 🌓 **Dark‑mode toggle** via CSS custom properties.
+
+
 
 ---
 
-## 3. Folder structure
+## 📘 Documentation & Assets
 
-```
-.
-├── index.html          # Landing page (search)
-├── cityActivity.html   # Results page
-├── aboutUs.html        # Project & team info
-├── scripts/
-│   ├── api.js          # Fetch wrappers (OpenAgenda + weather)
-│   ├── autocomplete.js # Simple fuzzy‑match for city list
-│   └── utils.js        # Helpers (debounce, templating …)
-├── ressources/
-│   ├── cities.json     # 2 152 Swiss localities + coords
-│   └── img/            # Icons & logo
-└── css/
-    └── styles.css      # Single stylesheet
-```
-
-> **Tip :** you can open `index.html` directly in your browser or use a mini‑HTTP server (`npx serve`, `python -m http.server`) if CORS blocks the API.
+| Item                               | Status                     |
+| ---------------------------------- | -------------------------- |
+|                                    |                            |
+| Hackathon report (PDF)             | ✅ Included in repo         |
+| Mock‑ups / screenshots             | ✅ In `/docs/mockups/`      |
+| API key example file (`config.js`) | ✅ Provided (keys redacted) |
+|                                    |                            |
 
 ---
 
-## 4. Security notice
+## ✅ Tests & Validation
 
-⚠️ **Heads‑up :** the file `scripts/callAPI.js` used to hold an OpenWeather API key in clear text. That key is now **revoked**, but publicly committing secrets is a bad practice.
+* Manual verification on latest **Chrome**, **Firefox**, **Safari Mobile**.
 
-> **How to fix**
-> • Move keys to `scripts/config.js` (already git‑ignored) or inject them via environment variables.
 
 ---
 
-## 5. Authors
+## 📌 Success Criteria Table
 
-* **Elias Borrajo**
-* **Milena Lonfat**
-* **Jonathan Bourquin**
+| Criterion                              | Status     | Notes                         |
+| -------------------------------------- | ---------- | ----------------------------- |
+| City search auto‑complete              | ✅ Done     | 2 152 localities, fuzzy match |
+| Weather fetched & rendered             | ✅ Done     | OpenWeather current endpoint  |
+| Activities displayed                   | 🟡 Partial | Placeholder dataset           |
+| Responsive layout (mobile < 768 px)    | ✅ Done     | Navbar hamburger              |
+| Dark‑mode switcher                     | ✅ Done     | CSS vars                      |
+| Accessibility (WCAG AA contrast, ARIA) | 🟡 Partial | Some forms need labels        |
+| Documentation (README + report)        | ✅ Done     | Report PDF attached           |
+|                                        |            |                               |
 
-## 6. License
+---
 
-MIT — see [`LICENSE.md`](LICENSE.md).
+## 🔒 Security Notice
 
-## 7. Acknowledgements
+A historical version of `scripts/callAPI.js` leaked an OpenWeather key. The key has been **revoked**. Keep new secrets in `scripts/config.js` (git‑ignored) or inject via environment variables at deploy time.
 
-Built at the *“Swiss Open‑Data Sprint”* (Fall 2023) — thanks to the [opendata.swiss](https://opendata.swiss) & [OpenAgenda](https://openagenda.com) communities for their awesome free APIs!
+---
+
+## 👤 Authors
+
+* **Elias Borrajo**
+* **Milena Lonfat**
+* **Jonathan Bourquin**
+* **Jérémie Dellea**
+
+---
+
+## 🎓 Academic Info
+
+*Course:* **Introduction to Open Concepts & Hackathon (IIG 605\_3)**
+*Professor:* Alexandre Cotting
+*School:* HES‑SO Valais‑Wallis — Institute of Information Systems
+*Semester:* Autumn 2022‑2023
+
+
+---
+
+> MIT Licence — see [`LICENSE.md`](LICENSE.md)
